@@ -1,0 +1,35 @@
+/**
+ * Created by Михаил on 02.02.2016.
+ */
+public class B {
+    public static void main(String[]args){
+        A bigQ = new A(100);
+        A smallQ = new A(4);
+        char ch;
+        int i;
+
+        System.out.println("Помещаем алфавит в bigQ: ");
+        for(i=0; i<26; i++)
+            bigQ.put((char)('A' + i));
+
+        System.out.print("bigQ содержит: ");
+        for(i=0; i<26; i++){
+            ch = bigQ.get();
+            if(ch !=(char)0) System.out.print(ch);
+        }
+        System.out.println("\n");
+
+        System.out.println("С помощью smallQ генерируем ошибки: ");
+        for(i=0; i<5; i++){
+            System.out.print("Пытаясь сохранить: " + (char)('Z'- i));
+            smallQ.put((char)('Z' - i));
+            System.out.println();
+        }
+        System.out.println();
+        System.out.print("Содержание smallQ: ");
+        for(i=0; i<5; i++){
+            ch = smallQ.get();
+            if(ch != (char)0) System.out.print(ch);
+        }
+    }
+}
